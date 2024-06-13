@@ -21,6 +21,7 @@ requirements:
     - cmake
     - ninja
     - {{ compiler("c") }}
+    - {{ stdlib("c") }}
     - {{ compiler("cxx") }}
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
