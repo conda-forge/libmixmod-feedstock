@@ -12,7 +12,7 @@ source:
     - 0001-Random-Use-c-11-apis-instead-of-clock_gettime.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libmixmod', max_pin='x.x') }}
 
