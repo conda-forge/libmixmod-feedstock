@@ -4,7 +4,6 @@ cmake -LAH -G "Ninja" ^
     -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
     -DMIXMOD_BUILD_EXAMPLES=ON ^
     -DCMAKE_UNITY_BUILD=ON ^
-    -DMIXMOD_ENABLE_OPENMP=OFF ^
     -DBUILD_SHARED_LIBS=OFF ^
     .
 if errorlevel 1 exit 1
