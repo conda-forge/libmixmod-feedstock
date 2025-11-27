@@ -9,7 +9,7 @@ source:
   sha256: e95414decf5b2c2c5eebd7fca10e0100f2d753cbfca0694f4ac75da3b39b005e
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libmixmod', max_pin='x.x') }}
 
