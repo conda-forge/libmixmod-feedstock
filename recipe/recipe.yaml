@@ -1,5 +1,5 @@
 context:
-  version: "2.1.11"
+  version: "2.1.12"
 
 package:
   name: libmixmod
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/mixmod/mixmod/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: e95414decf5b2c2c5eebd7fca10e0100f2d753cbfca0694f4ac75da3b39b005e
+  sha256: dd6c0d1fef7f2aa80e0c77680baa0718aa6326302bfd11b7e5dd99a378e5b277
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -29,14 +29,12 @@ requirements:
     - ${{ pin_subpackage('libmixmod', upper_bound='x.x') }}
 
 tests:
-  - script:
-      - if: unix
-        then:
-          - test -f ${PREFIX}/include/mixmod.h
-          - test -f ${PREFIX}/lib/libmixmod${SHLIB_EXT}
-        else:
-          - if not exist %PREFIX%\\Library\\include\\mixmod.h exit 1
-          - if not exist %PREFIX%\\Library\\lib\\mixmod.lib exit 1
+  - package_contents:
+      include:
+        - mixmod.h
+      lib:
+        - if: unix
+          then: mixmod
 
 about:
   homepage: https://github.com/mixmod/mixmod
